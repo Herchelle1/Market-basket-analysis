@@ -1,1 +1,184 @@
 
+
+Skip to content
+Using Gmail with screen readers
+
+Conversations
+35% of 15 GB used
+Terms · Privacy · Programme Policies
+Last account activity: 14 minutes ago
+Details
+README.html
+100%
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Basket Analysis</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#596579; --line:#e5eaf1; --accent:#2563eb; --soft:#f4f7fb; }
+    * { box-sizing: border-box; }
+    body { margin:0; padding:36px 18px; background:#f5f7fb; color:var(--ink); font:16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width:900px; margin:0 auto; padding:42px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 12px 36px rgba(20,35,60,.06); }
+    h1 { margin:0 0 8px; font-size:2.25rem; line-height:1.2; letter-spacing:-.04em; }
+    h2 { margin:34px 0 12px; padding-bottom:9px; border-bottom:1px solid var(--line); font-size:1.35rem; }
+    p { color:var(--muted); }
+    .lead { font-size:1.08rem; max-width:760px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 28px; }
+    .tag { padding:5px 11px; border-radius:999px; background:#edf3ff; color:#1d4ed8; font-size:.85rem; font-weight:650; }
+    .panel { padding:18px 20px; background:var(--soft); border:1px solid var(--line); border-radius:12px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+    .card { padding:16px; border:1px solid var(--line); border-radius:12px; }
+    .card h3 { margin:0 0 6px; font-size:1rem; }
+    .card p { margin:0; font-size:.94rem; }
+    ul, ol { padding-left:22px; color:var(--muted); }
+    li { margin:7px 0; }
+    code { padding:2px 6px; border-radius:5px; background:#f0f3f8; color:#25324a; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; }
+    .note { border-left:4px solid var(--accent); padding:12px 16px; background:#f3f7ff; color:#33415c; border-radius:0 8px 8px 0; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    footer { margin-top:36px; padding-top:18px; border-top:1px solid var(--line); color:#748095; font-size:.9rem; }
+    @media (max-width:600px) { main { padding:25px 20px; } h1 { font-size:1.8rem; } body { padding:14px 10px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Market Basket Analysis</h1>
+    <p class="lead">
+      A full-stack application that analyses transaction data to discover products
+      frequently purchased together. It uses the Apriori algorithm to generate
+      association rules and presents the results through a React-based interface.
+    </p>
+    <div class="tags" aria-label="Technology stack">
+      <span class="tag">Python</span><span class="tag">Flask</span>
+      <span class="tag">REST API</span><span class="tag">Apriori</span>
+      <span class="tag">React</span><span class="tag">Pandas</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      Market Basket Analysis is a data-mining technique used to identify relationships
+      between products in transactional data. This project applies association-rule
+      mining to find product combinations and make the resulting patterns easier to
+      explore through a web application.
+    </p>
+    <p>
+      The backend exposes a Flask REST API that performs the analysis using the
+      Apriori algorithm. The React frontend consumes the API and displays the
+      generated association rules in a structured table.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Features</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Association Rule Mining</h3>
+        <p>Uses the Apriori algorithm to identify frequent itemsets and product associations.</p>
+      </article>
+      <article class="card">
+        <h3>Configurable Thresholds</h3>
+        <p>Runs the analysis with a minimum support threshold of 0.4 and confidence threshold of 0.6.</p>
+      </article>
+      <article class="card">
+        <h3>REST API Backend</h3>
+        <p>Uses Flask to expose the analysis results to the frontend.</p>
+      </article>
+      <article class="card">
+        <h3>React Interface</h3>
+        <p>Fetches association rules from the API and presents them in a readable table.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <ol>
+      <li><strong>Transaction data:</strong> The analysis takes transaction data as its input.</li>
+      <li><strong>Frequent itemsets:</strong> Apriori identifies item combinations that meet the minimum support threshold.</li>
+      <li><strong>Association rules:</strong> Rules are generated and filtered using the confidence threshold.</li>
+      <li><strong>Rule evaluation:</strong> Support, confidence and lift are used to understand the strength and usefulness of each association.</li>
+      <li><strong>Frontend display:</strong> The React application retrieves the results from the Flask API and displays them in a table.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Understanding the Metrics</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Support</h3>
+        <p>Measures how frequently an item or item combination appears across all transactions.</p>
+      </article>
+      <article class="card">
+        <h3>Confidence</h3>
+        <p>Measures how often the consequent appears in transactions that contain the antecedent.</p>
+      </article>
+      <article class="card">
+        <h3>Lift</h3>
+        <p>Measures how much more often the antecedent and consequent occur together than would be expected if they were independent.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technology Stack</h2>
+    <ul>
+      <li><strong>Python:</strong> Backend programming and analysis logic.</li>
+      <li><strong>Flask:</strong> REST API development.</li>
+      <li><strong>Apriori:</strong> Frequent itemset mining and association-rule generation.</li>
+      <li><strong>React:</strong> Frontend interface.</li>
+      <li><strong>Pandas:</strong> Transaction data handling and analysis.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Repository Structure</h2>
+    <div class="panel">
+      <code>Market-basket-analysis/</code><br>
+      ├── <code>backend/</code> &nbsp; Backend application<br>
+      └── <code>frontend/</code> &nbsp; React frontend
+    </div>
+    <p class="note">
+      The public repository listing confirms these two top-level folders. Add the
+      internal file tree once the exact filenames have been checked.
+    </p>
+  </section>
+
+  <section>
+    <h2>Getting Started</h2>
+    <p>
+      The repository's public file listing does not expose enough detail to verify
+      dependency files, entry-point filenames, API routes or environment variables.
+      Add the exact setup commands here after confirming the backend and frontend
+      configuration files.
+    </p>
+    <div class="panel">
+      <strong>Backend</strong>
+      <p>Install the dependencies listed in the backend dependency file, configure any required inputs, and start the Flask application using its actual entry point.</p>
+      <strong>Frontend</strong>
+      <p>Install the dependencies listed in the frontend package manifest and start the React development server using the available npm script.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Potential Applications</h2>
+    <ul>
+      <li>Discovering products that are frequently purchased together.</li>
+      <li>Supporting product bundling and cross-selling decisions.</li>
+      <li>Informing product placement and promotional strategies.</li>
+      <li>Exploring purchasing patterns in retail transaction data.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><strong>Project:</strong> Market Basket Analysis</p>
+    <p><strong>Repository:</strong> <a href="https://github.com/Herchelle1/Market-basket-analysis">github.com/Herchelle1/Market-basket-analysis</a></p>
+  </footer>
+</main>
+</body>
+</html>
+Displaying README.html.
